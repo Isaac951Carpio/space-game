@@ -1,0 +1,113 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: black;
+  color: white;
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden;
+}
+
+#level-selection {
+  text-align: center;
+}
+
+#level-selection h1 {
+  margin-bottom: 20px;
+}
+
+#level-selection button {
+  padding: 10px 20px;
+  font-size: 18px;
+  margin: 10px;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  background-color: blue;
+  color: white;
+}
+
+#level-selection button:hover {
+  background-color: darkblue;
+}
+
+#game-area {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  background-color: #000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#level-title {
+  margin-top: 20px;
+  font-size: 24px;
+  color: white;
+}
+
+#player {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50px;
+  height: 50px;
+  background-color: blue;
+  border-radius: 50%;
+}
+
+.bullet {
+  position: absolute;
+  width: 5px;
+  height: 15px;
+  background-color: yellow;
+}
+
+.enemy {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  background-color: red;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Alien eyes */
+.enemy::before,
+.enemy::after {
+  content: '';
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background-color: white;
+  border-radius: 50%;
+  top: 12px;
+}
+
+.enemy::before {
+  left: 8px;
+}
+
+.enemy::after {
+  right: 8px;
+}
+
+/* Alien antennae */
+.enemy::before {
+  box-shadow: -10px -8px 0 white;
+}
+
+.enemy::after {
+  box-shadow: 10px -8px 0 white;
+}
