@@ -92,17 +92,11 @@ function shoot() {
   bullets.push(bullet);
 }
 
-// Spawn enemies with alien images
+// Spawn enemies
 function spawnEnemy() {
   if (gameOver) return;
   const enemy = document.createElement('div');
   enemy.classList.add('enemy');
-
-  // Randomly select an alien image
-  const alienImages = ['alien1.png', 'alien2.png']; // Add more if needed
-  const randomAlien = alienImages[Math.floor(Math.random() * alienImages.length)];
-  enemy.style.backgroundImage = `url('${randomAlien}')`;
-
   enemy.style.left = `${Math.random() * (window.innerWidth - 40)}px`; // Adjust for alien size
   enemy.style.top = '0';
   gameArea.appendChild(enemy);
